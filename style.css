@@ -1,0 +1,146 @@
+/* Basic body styling */
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #9d9b9b;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+}
+
+.navbar > h1 {
+    text-align: center; /* Ensure title is centered */
+    flex: 1; /* Take equal space */
+}
+
+/* Main content styling */
+.content {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Allow vertical stacking */
+    justify-content: flex-start; /* Align from the top */
+    align-items: center;
+    min-height: 100vh; /* Allow content to grow */
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding-bottom: 60px; /* Adjust according to footer's height */
+}
+
+
+/* Chart container styling */
+.chart-container {
+    display: flex;
+    justify-content: space-between; /* Space out the gauge charts */
+    width: 95%; /* Full width */
+    padding: 30px; /* Space for toggle button */
+}
+
+/* Ensure each chart has its own section with proper spacing */
+.chart-section {
+    text-align: center; /* Center the text below each chart */
+    padding: 10px; /* Optional padding */
+}
+
+/* Styling for the data elements below each chart */
+.chart-section p {
+    font-size: 20px; /* Optional font size adjustment */
+    margin: 5px 0; /* Add some space between text and chart */
+}
+
+/* Styling for the toggle button */
+.toggle-button {
+    padding: 10px 20px; /* Added padding for a better look */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* History container positioning and visibility handling */
+.history {
+    display: none; /* Initially hidden */
+    width: 80%; /* Full width */
+    margin-top: 20px; /* Spacing between button and history table */
+    padding: 20px; /* Padding for visual clarity */
+    padding-bottom: 60px; /* Adjust according to footer's height */
+}
+
+
+/* Styling for each gauge chart */
+.gauge-chart {
+    width: 200px; /* Fixed width for the gauge charts */
+    height: 200px; /* Fixed height for the gauge charts */
+    text-align: center;
+}
+
+/* Styling for the history table */
+.history-table {
+    border-collapse: collapse; /* Ensure no gaps between table cells */
+    width: 100%; /* Take full width of the parent */
+    margin-top: 10px; /* Add margin above the table */
+}
+
+.history-table th, 
+.history-table td {
+    padding: 10px; /* Padding for table cells */
+    text-align: center; /* Center text alignment */
+    border: 1px solid #ccc; /* Border for each cell */
+}
+
+/* Footer styling */
+.footer {
+    background-color: #9d9b9b;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: left;
+    position: relative; /* Allows footer to move with content */
+    width: 100%; /* Full width */
+    /* Ensure the footer is at the bottom of the content */
+    bottom: 0; 
+    margin-top: 20px; /* Additional spacing for visual separation */
+}
+
+
+/* Footer links styling */
+.footer-links {
+    text-align: center; /* Ensures the link is centered */
+}
+
+/* Footer contacts styling */
+.footer-contacts {
+    display: flex; /* Horizontal alignment for the contacts */
+    justify-content: space-between; /* Spaces out the contact info evenly */
+}
+
+.contact-info {
+    flex: 1; /* Allows each contact block to take equal space */
+    padding: 10px; /* Adds space between the contact info */
+}
+
+.contact-info p {
+    margin: 0; /* Ensures there's no extra vertical spacing */
+}
+
+/* Footer links and hover styling */
+.footer a {
+    color: #ffffff;
+    ; /* Maintains consistent link color */
+    text-decoration: none; /* Removes underlines for a cleaner look */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underlines on hover */
+}
+
