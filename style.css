@@ -9,19 +9,17 @@ body {
     overflow-x: hidden; 
 }
 
-/* Navbar styling */
 .navbar {
-    background-color: #9d9b9b;
-    color: rgb(0, 0, 0);
-    padding: 15px;
+    background: linear-gradient(135deg, #FFFFF0, #FFD700); /* Gradient background */
+    padding: 15px 20px; /* Adjust padding for better spacing */
     display: flex;
-    justify-content: center; /* Center the content */
     align-items: center;
 }
 
-.navbar > h1 {
-    text-align: center; /* Ensure title is centered */
-    flex: 1; /* Take equal space */
+.navbar img.logo {
+    width: 40px; /* Increase the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space between the logo and text */
 }
 
 /* Main content styling */
@@ -101,32 +99,28 @@ body {
 
 /* Footer styling */
 .footer {
-    background-color: #9d9b9b;
-    color: rgb(0, 0, 0);
+    background: linear-gradient(135deg, #FFFFF0, #FFD700); /* Gradient background */
+    color: #000000; /* Adjust text color for better visibility */
     padding: 20px;
     text-align: left;
-    position: relative; /* Allows footer to move with content */
+    position: absolute; /* Change to absolute positioning */
     width: 100%; /* Full width */
-    /* Ensure the footer is at the bottom of the content */
-    bottom: 0; 
-    margin-top: 20px; /* Additional spacing for visual separation */
+    bottom: 0; /* Stick the footer to the bottom */
+    left: 0; /* Align the footer to the left */
 }
 
-
-/* Footer links styling */
 .footer-links {
-    text-align: center; /* Ensures the link is centered */
+    text-align: center; /* Center the links */
+}
+
+.contact-info {
+    padding: 10px 0; /* Adjust padding for better spacing */
 }
 
 /* Footer contacts styling */
 .footer-contacts {
     display: flex; /* Horizontal alignment for the contacts */
     justify-content: space-between; /* Spaces out the contact info evenly */
-}
-
-.contact-info {
-    flex: 1; /* Allows each contact block to take equal space */
-    padding: 10px; /* Adds space between the contact info */
 }
 
 .contact-info p {
@@ -136,7 +130,6 @@ body {
 /* Footer links and hover styling */
 .footer a {
     color: #ffffff;
-    ; /* Maintains consistent link color */
     text-decoration: none; /* Removes underlines for a cleaner look */
 }
 

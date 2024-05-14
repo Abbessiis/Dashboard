@@ -7,12 +7,11 @@
     
 </head>
 <body>
-    <nav class="navbar">
-        <h1>TechGuard Dashboard</h1>
-    </nav>
-
+    <div class="navbar">
+        <img src="logo.png" alt="TechGuard Logo" class="logo">
+    </div>
     <div class="content">
-        <div class="chart-container"> <!-- New container to hold the charts -->
+        <div class="chart-container">
             <?php
             // Database connection and data fetching
             $hostname = "localhost"; 
@@ -112,7 +111,7 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="https://www.tn.kbe-elektrotechnik.com/fr/entreprise" target="_blank">
-                En savoir plus sur notre entreprise
+                <img src="kbelogo.png" alt="KB Elektrotechnik Logo" class="footer-logo">
             </a>
         </div>
 

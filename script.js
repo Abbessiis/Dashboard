@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const conductivityCtx = document.getElementById("conductivityGauge").querySelector("canvas").getContext("2d");
 
     // Create initial charts
-    tempGauge = createGaugeChart(tempCtx, "Température", phpData.temperature, 0, 100, "#FF6384");
-    waterLevelGauge = createGaugeChart(waterLevelCtx, "Niveau d'eau", phpData.water_level, 0, 100, "#36A2EB");
+    tempGauge = createGaugeChart(tempCtx, "Température", phpData.temperature, 0, 50, "#FF6384");
+    waterLevelGauge = createGaugeChart(waterLevelCtx, "Niveau d'eau", phpData.water_level, 0, 300, "#36A2EB");
     conductivityGauge = createGaugeChart(conductivityCtx, "Conductivité", phpData.conductivity, 0, 5000, "#FFCE56");
 
     // Set interval to refresh the charts every 5 seconds
@@ -86,7 +86,7 @@ function updateCharts() {
                         <th>Niveau d'eau</th>
                         <th>Conductivité</th>
                     </tr>
-                `; // Clear existing rows and add headers
+                `;
 
                 dataArray.forEach(record => {
                     const row = document.createElement("tr");
@@ -96,7 +96,7 @@ function updateCharts() {
                         <td>${record.water_level} cm</td>
                         <td>${record.conductivity} µS/cm</td>
                     `;
-                    historyTable.appendChild(row); // Append new rows
+                    historyTable.appendChild(row);
                 });
             }
         })
