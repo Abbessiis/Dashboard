@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>TechGuard Dashboard</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">    
 </head>
 <body>
     <div class="navbar">
         <img src="logo.png" alt="TechGuard Logo" class="logo">
+        <div class="datetime" id="datetime"></div>
     </div>
     <div class="content">
         <div class="chart-container">
@@ -69,7 +71,9 @@
         </div>
 
         <!-- Button to show/hide history table -->
-        <button class="toggle-button" onclick="toggleHistory()">Afficher l'historique</button>
+        <button class="toggle-button" onclick="toggleHistory()">
+            <i class="fas fa-history"></i>Afficher l'historique
+        </button>
         
         <!-- History table, initially hidden -->
         <div class="history" id="historyContainer" style="display: none;"> 
@@ -111,35 +115,44 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="https://www.tn.kbe-elektrotechnik.com/fr/entreprise" target="_blank">
-                <img src="kbelogo.png" alt="KB Elektrotechnik Logo" class="footer-logo">
+                <img src="kbelogo.png" alt="KB Elektrotechnik Logo" class="footer-logo" style="width: 50px; height:45px;">
             </a>
         </div>
 
         <div class="footer-contacts"> <!-- Horizontal Flex Layout -->
             <div class="contact-info"> <!-- Container for each contact -->
-                <strong>MOHSEN BOUMIZA | Gérant</strong>
-                <p>Tél.  +216 73 322 547 -15</p>
-                <p>Fax  +216 73 322 548</p>
-                <p>Email: <a href="mailto:mohsen.boumiza@kbe-elektrotechnik.com">mohsen.boumiza@kbe-elektrotechnik.com</a></p>
+                <strong><i class="fas fa-user"></i> MOHSEN BOUMIZA | Gérant</strong>
+                <p><i class="fas fa-phone"></i> +216 73 322 547</p>
+                <p><i class="fas fa-fax"></i> +216 73 322 548</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:mohsen.boumiza@kbe-elektrotechnik.com">mohsen.boumiza@kbe-elektrotechnik.com</a></p>
             </div>
 
             <div class="contact-info"> <!-- Container for each contact -->
-                <strong>HOUCINE MANAA | Directeur Qualité & Dir. General</strong>
-                <p>Tél.  +216 73 322 547 -17</p>
-                <p>Fax  +216 73 322 548</p>
-                <p>Email: <a href="mailto:houcine.manaa@kbe-elektrotechnik.com">houcine.manaa@kbe-elektrotechnik.com</a></p>
+                <strong><i class="fas fa-user"></i> HOUCINE MANAA | Directeur Qualité & Dir. General</strong>
+                <p><i class="fas fa-phone"></i> +216 73 322 547</p>
+                <p><i class="fas fa-fax"></i> +216 73 322 548</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:houcine.manaa@kbe-elektrotechnik.com">houcine.manaa@kbe-elektrotechnik.com</a></p>
             </div>
 
             <div class="contact-info"> <!-- Container for each contact -->
-                <strong>MAHER CHAHED | Ingénieur technico-commercial</strong>
-                <p>Tél.  +216 73 322 547 -18</p>
-                <p>Fax  +216 73 322 548</p>
-                <p>Email: <a href="mailto:maher.chahed@kbe-elektrotechnik.com">maher.chahed@kbe-elektrotechnik.com</a></p>
+                <strong><i class="fas fa-user"></i> MAHER CHAHED | Ingénieur technico-commercial</strong>
+                <p><i class="fas fa-phone"></i>  +216 73 322 547</p>
+                <p><i class="fas fa-fax"></i> +216 73 322 548</p>
+                <p<i class="fas fa-envelope"></i> <a href="mailto:maher.chahed@kbe-elektrotechnik.com">maher.chahed@kbe-elektrotechnik.com</a></p>
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-doughnut-gauge@0.3.0"></script>
     <script src="script.js"></script>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleDateString('fr-FR') + ' ' + now.toLocaleTimeString('fr-FR');
+            document.getElementById('datetime').textContent = dateTimeString;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call to set date and time immediately
+    </script>
 </body>
 </html>

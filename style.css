@@ -1,7 +1,6 @@
-/* Basic body styling */
 body {
     background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     position: relative;
@@ -10,17 +9,24 @@ body {
 }
 
 .navbar {
-    background: linear-gradient(135deg, #FFFFF0, #FFD700); /* Gradient background */
-    padding: 15px 20px; /* Adjust padding for better spacing */
+    background: linear-gradient(135deg, #FFFFF0, #FFD700);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    height: 60px;
 }
 
-.navbar img.logo {
-    width: 40px; /* Increase the size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Add some space between the logo and text */
+.logo {
+    width: 180px;
+    height: auto;
 }
+
+.datetime {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 
 /* Main content styling */
 .content {
@@ -32,9 +38,7 @@ body {
     align-items: center;
     min-height: 100vh; /* Allow content to grow */
     overflow-y: auto; /* Allow vertical scrolling */
-    padding-bottom: 60px; /* Adjust according to footer's height */
 }
-
 
 /* Chart container styling */
 .chart-container {
@@ -58,12 +62,19 @@ body {
 
 /* Styling for the toggle button */
 .toggle-button {
-    padding: 10px 20px; /* Added padding for a better look */
-    background-color: #4CAF50;
+    padding: 10px 20px; 
+    background-color: #bd1601; 
     color: white;
     border: none;
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-button i {
+    margin-right: 8px;
 }
 
 /* History container positioning and visibility handling */
@@ -101,10 +112,8 @@ body {
 .footer {
     background: linear-gradient(135deg, #FFFFF0, #FFD700); /* Gradient background */
     color: #000000; /* Adjust text color for better visibility */
-    padding: 20px;
+    padding: 10px 16px;
     text-align: left;
-    position: absolute; /* Change to absolute positioning */
-    width: 100%; /* Full width */
     bottom: 0; /* Stick the footer to the bottom */
     left: 0; /* Align the footer to the left */
 }
@@ -114,7 +123,7 @@ body {
 }
 
 .contact-info {
-    padding: 10px 0; /* Adjust padding for better spacing */
+    padding: 5px 0; /* Adjust padding for better spacing */
 }
 
 /* Footer contacts styling */
@@ -129,8 +138,8 @@ body {
 
 /* Footer links and hover styling */
 .footer a {
-    color: #ffffff;
-    text-decoration: none; /* Removes underlines for a cleaner look */
+    color: #0d33dd;
+    text-decoration: none;
 }
 
 .footer a:hover {
