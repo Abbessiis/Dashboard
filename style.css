@@ -27,7 +27,6 @@ body {
     font-weight: bold;
 }
 
-
 /* Main content styling */
 .content {
     padding: 20px;
@@ -86,6 +85,10 @@ body {
     padding-bottom: 60px; /* Adjust according to footer's height */
 }
 
+.highlight {
+    color: red;
+    font-weight: bold;
+}
 
 /* Styling for each gauge chart */
 .gauge-chart {

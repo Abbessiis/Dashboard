@@ -9,8 +9,12 @@ if ($conn->connect_error) {
     die("Erreur de connexion : " . $conn->connect_error);
 }
 
-// Fetch multiple records
-$sql = "SELECT temperature, water_level, conductivity, DateTime FROM dht11 ORDER BY DateTime DESC LIMIT 10"; // Get the last 10 records
+// Fetch records where any value is above the limit
+$sql = "SELECT temperature, water_level, conductivity, DateTime 
+        FROM dht11 
+        WHERE temperature > 10 OR water_level > 100 OR conductivity > 500 
+        ORDER BY DateTime DESC 
+        LIMIT 10"; // Get the last 10 records that exceed the limits
 $result = $conn->query($sql);
 
 $data = []; // Initialize an array

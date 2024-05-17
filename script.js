@@ -1,6 +1,5 @@
 // Function to toggle history table visibility
 function toggleHistory() {
-    
     var historyContainer = document.getElementById("historyContainer");
     if (historyContainer.style.display === "none" || historyContainer.style.display === "") { 
         historyContainer.style.display = "block"; // Show the history
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Function to update the charts with the latest data
 function updateCharts() {
-    console.log("Fetching latest data...");
     fetch('latest_data.php')
         .then(response => response.json())
         .then(data => {
@@ -89,12 +87,13 @@ function updateCharts() {
                 `;
 
                 dataArray.forEach(record => {
+                    console.log(record);
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td>${record.dateTime}</td>
-                        <td>${record.temperature}°C</td>
-                        <td>${record.water_level} cm</td>
-                        <td>${record.conductivity} µS/cm</td>
+                        <td style="color: ${record.temperature > 10 ? 'red' : 'black'}">${record.temperature}°C</td>
+                        <td style="color: ${record.water_level > 100 ? 'red' : 'black'}">${record.water_level} cm</td>
+                        <td style="color: ${record.conductivity > 500 ? 'red' : 'black'}">${record.conductivity} µS/cm</td>
                     `;
                     historyTable.appendChild(row);
                 });
@@ -102,4 +101,3 @@ function updateCharts() {
         })
         .catch(error => console.error("Error fetching latest data:", error));
 }
-

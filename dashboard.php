@@ -75,7 +75,6 @@
             <i class="fas fa-history"></i>Afficher l'historique
         </button>
         
-        <!-- History table, initially hidden -->
         <div class="history" id="historyContainer" style="display: none;"> 
             <table id="historyTable" class="history-table">
                 <tr>
@@ -91,16 +90,24 @@
                 if ($conn->connect_error) {
                     die("Erreur de connexion : " . $conn->connect_error); 
                 }
-                $sql = "SELECT temperature, water_level, conductivity, DateTime FROM dht11 ORDER BY DateTime DESC LIMIT 10";
+                $sql = "SELECT temperature, water_level, conductivity, DateTime 
+                        FROM dht11 
+                        WHERE temperature > 30 OR water_level > 300 OR conductivity > 50 
+                        ORDER BY DateTime DESC 
+                        LIMIT 10"; // Get the last 10 records that exceed the limits
                 $result = $conn->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        $temperature = $row['temperature'];
+                        $water_level = $row['water_level'];
+                        $conductivity = $row['conductivity'];
+
                         echo "<tr>";
                         echo "<td>" . $row['DateTime'] . "</td>";
-                        echo "<td>" . $row['temperature'] . "°C</td>";
-                        echo "<td>" . $row['water_level'] . "cm</td>";
-                        echo "<td>" . $row['conductivity'] . "µS/cm</td>";
+                        echo "<td style='color:" . ($temperature > 10 ? "red" : "black") . "'>" . $temperature . "°C</td>";
+                        echo "<td style='color:" . ($water_level > 100 ? "red" : "black") . "'>" . $water_level . "cm</td>";
+                        echo "<td style='color:" . ($conductivity > 500 ? "red" : "black") . "'>" . $conductivity . "µS/cm</td>";
                         echo "</tr>";
                     }
                 } else {
